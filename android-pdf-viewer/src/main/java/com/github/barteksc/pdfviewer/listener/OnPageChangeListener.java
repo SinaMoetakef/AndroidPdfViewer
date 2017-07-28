@@ -29,4 +29,21 @@ public interface OnPageChangeListener {
      */
     void onPageChanged(int page, int pageCount);
 
+    /**
+     * Called when the user use swipe to change page
+     *
+     * @param pageIndexInAllDocuments       the index of page displayed in all documents, starting from 0
+     * @param pageIndexInCurrentDocument    the index of page displayed in the current visible document, starting from 0
+     * @param totalPageCount                total number of pages for all documents.
+     */
+    void onPageChangedWithIndexes(int pageIndexInAllDocuments, int pageIndexInCurrentDocument, int totalPageCount);
+
+    /**
+     * Called when scrolling to a page with animation is ended.
+     *
+     * @param pageIndexInAllDocuments       the index of page displayed in all documents, starting from 0
+     * @param pageIndexInCurrentDocument    the index of page displayed in the current visible document, starting from 0
+     * @param totalPageCount                total number of pages for all documents.
+     */
+    void onPageAnimationDidEnd(int pageIndexInAllDocuments, int pageIndexInCurrentDocument, int totalPageCount);
 }

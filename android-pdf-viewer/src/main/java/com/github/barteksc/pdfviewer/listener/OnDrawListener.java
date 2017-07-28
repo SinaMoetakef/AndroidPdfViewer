@@ -35,4 +35,21 @@ public interface OnDrawListener {
      * @param displayedPage The current page index
      */
     void onLayerDrawn(Canvas canvas, float pageWidth, float pageHeight, int displayedPage);
+
+    /**
+     * This method is called when the PDFView is
+     * drawing its view. providing a detailed information about the page index.
+     * <p>
+     * The page is starting at (0,0)
+     *
+     * @param canvas                        The canvas on which to draw things.
+     * @param pageWidth                     The width of the current page.
+     * @param pageHeight                    The height of the current page.
+     * @param pageIndexInAllDocuments       the index of page displayed in all documents, starting from 0
+     * @param pageIndexInCurrentDocument    the index of page displayed in the current visible document, starting from 0
+     * @param totalPageCount                total number of pages for all documents.
+     */
+    void onLayerDrawnWithIndexes(Canvas canvas, float pageWidth, float pageHeight,
+                                 int pageIndexInAllDocuments, int pageIndexInCurrentDocument, int totalPageCount);
+
 }
